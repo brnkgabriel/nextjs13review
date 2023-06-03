@@ -1,4 +1,6 @@
-stopped: 1:26:13
+stopped: 2:05:31
+
+source code: https://github.com/gitdagray/next-js-course
 
 storybook materials:
 - https://www.youtube.com/watch?v=FUKpWgRyPlU&t=5s
