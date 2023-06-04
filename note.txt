@@ -1,4 +1,4 @@
-stopped: 2:05:31
+stopped: 2:16:11
 
 source code: https://github.com/gitdagray/next-js-course
 

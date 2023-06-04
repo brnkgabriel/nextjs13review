@@ -15,8 +15,8 @@ type Props = {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params: { userId } } = props
-  const userData: Promise<User> = getUser(userId)
-  const user: User = await userData
+  const userData: Promise<iUser> = getUser(userId)
+  const user: iUser = await userData
 
   if (!user) {
     return { title: "User Not Found" }
@@ -30,8 +30,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
 export default async function User(props: Props) {
   const { params: { userId } } = props
-  const userData: Promise<User> = getUser(userId)
-  const postData: Promise<Post[]> = getUserPosts(userId)
+  const userData: Promise<iUser> = getUser(userId)
+  const postData: Promise<iPost[]> = getUserPosts(userId)
 
   const [ user, posts ] = await Promise.all([ userData, postData ])
   
@@ -47,7 +47,7 @@ export default async function User(props: Props) {
 }
 
 export async function generateStaticParams() {
-  const usersData: Promise<User[]> = getAllUsers()
+  const usersData: Promise<iUser[]> = getAllUsers()
   const users = await usersData
   return users.map(user => (
     { userId: user.id.toString() }

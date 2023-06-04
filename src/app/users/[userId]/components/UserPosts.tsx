@@ -1,7 +1,7 @@
 'use client'
 
 type Props = {
-  posts: Post[]
+  posts: iPost[]
 }
 
 export default function UserPosts({ posts }: Props) { 

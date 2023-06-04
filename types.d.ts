@@ -1,4 +1,4 @@
-type User = {
+interface iUser {
   id: string,
   name: string,
   username: string,
@@ -22,14 +22,37 @@ type User = {
   }
 }
 
-type iError = {
+interface iError {
   error: Error,
   reset: () => void
 }
 
-type Post = {
+interface iPost {
   userId: number,
   id: number,
   title: string,
   body: string
+}
+
+interface iResult {
+  pageid: string,
+  title: string,
+  extract: string,
+  thumbnail?: {
+    source: string,
+    width: number,
+    height: number
+  }
+}
+
+interface iSearchResult {
+  query?: {
+    pages?: iResult[]
+  }
+}
+
+interface iSearchResult {
+  query?: {
+    pages?: iResult[]
+  }
 }
